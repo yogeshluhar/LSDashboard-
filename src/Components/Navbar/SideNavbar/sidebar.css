@@ -26,7 +26,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 250px;
+  width: 280px;
   height: 100vh;
   background-color: var(--primary-color);
   color: white;
@@ -84,42 +84,26 @@ body {
 }
 
 .toggle-btn.shifted {
-  left: 300px;
-}
-
-/* Main Content */
-.main-content {
-  transition: margin-left 0.3s ease;
-  margin-left: 0;
-  padding: 40px 20px 20px 20px;
-  width: 100%;
-}
-
-.main-content.shifted {
-  margin-left: 250px;
+  left: 290px;
 }
 
 /* Company Image */
 .company-logo {
-  text-align: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .company-image img {
-  width: 50px;
+  width: 40px;
   height: auto;
   border-radius: 8px;
-  object-fit: contain;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .company-logo h2 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: var(--text-color);
   font-family: var(--font-main);
-  margin-top: 10px;
 }
 
 /* sub-Menu */
