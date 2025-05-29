@@ -1,6 +1,8 @@
 const Analytics = () => {
     return (
-        <></>
+        <>
+        Analytics Added
+        </>
     );
 }
 

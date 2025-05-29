@@ -1,6 +1,10 @@
 const BillGenerator = () => {
     return (
-        <></>
+        <>
+        <div>
+            Bill ADded
+        </div>
+        </>
     );
 }
 
