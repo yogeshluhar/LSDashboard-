@@ -13,6 +13,7 @@ const Header = () => {
     "/": "Dashboard",
     "/super-stocking": "Super Stocking",
     "/dealer": "Dealer",
+    "/vander": "Vander",
     "/retailer": "Retailer",
     "/analytics": "Analytics",
     "/ffqs": "FFQs",
