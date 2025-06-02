@@ -1,16 +1,12 @@
-import Stylesheet from "reactjs-stylesheet";
-import Radium from 'radium';
-
 export const DashboardStyleSheet = {
   dashboardContainer: {
-    margin: "1rem",
+    margin: "0.3rem",
     padding: "1rem",
   },
   dashboardHeader: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    marginBottom: "1rem",
   },
   dashboardTitle: {
     fontSize: "25px",
@@ -86,15 +82,12 @@ export const DashboardStyleSheet = {
     border: "none",
     fontWeight: 700,
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-    ':hover': {
-      color: "black",
-    },
   },
   dashboardMainTable: {
     display: "flex",
     flexDirection: "column",
-    margin: "13px 29px",
-    padding: "13px",
+    margin: "1rem",
+    padding: "1rem",
     borderRadius: "22px",
     boxShadow: "0 4px 8px rgba(73, 20, 141, 0.5)",
   },
@@ -102,14 +95,12 @@ export const DashboardStyleSheet = {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    marginBottom: "21px",
     flexWrap: "wrap",
   },
   summaryName: {
     flex: 1,
     fontSize: "2vw",
     fontWeight: 700,
-    padding: "0 8px",
   },
   show: {
     display: "flex",
@@ -203,7 +194,6 @@ export const DashboardStyleSheet = {
     textAlign: "center",
     padding: "8px 12px",
     borderRadius: "6px",
-    backgroundColor: "#f2f2f2",
     transition: "0.2s ease",
   },
   arrowDisabled: {
@@ -212,108 +202,3 @@ export const DashboardStyleSheet = {
   },
 };
 
-
-export const SidebarStyles = {
-  layoutContainer: {
-    display: "flex",
-  },
-  sidebar: {
-    position: "fixed",
-    top: 0,
-    left: 0,
-    width: "280px",
-    height: "100vh",
-    backgroundColor: "#292965",
-    color: "white",
-    padding: "20px",
-    transform: "translateX(-100%)",
-    transition: "transform 0.3s ease",
-    zIndex: 1000,
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-  },
-  sidebarOpen: {
-    transform: "translateX(0)",
-  },
-  sidebarTitle: {
-    marginTop: 0,
-    fontSize: "22px",
-  },
-  sidebarList: {
-    listStyle: "none",
-    padding: 0,
-  },
-  sidebarListItem: {
-    margin: "10px 0",
-  },
-  sidebarLink: {
-    color: "white",
-    textDecoration: "none",
-  },
-  sidebarLinkActive: {
-    color: "#cce4f5",
-    fontWeight: "bold",
-  },
-  toggleBtn: {
-    position: "fixed",
-    top: "10px",
-    left: "10px",
-    zIndex: 100,
-    fontSize: "24px",
-    padding: "10px 15px",
-    backgroundColor: "#292965",
-    color: "white",
-    border: "none",
-    cursor: "pointer",
-    borderRadius: "6px",
-    transition: "left 0.3s ease",
-  },
-  toggleBtnShifted: {
-    left: "290px",
-  },
-  companyLogo: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-  companyImage: {
-    width: "40px",
-    height: "auto",
-    borderRadius: "8px",
-  },
-  companyTitle: {
-    fontSize: "1.3rem",
-    color: "white",
-    fontFamily: "'Poppins', sans-serif",
-  },
-  submenu: {
-    marginLeft: "1rem",
-  },
-  menuItem: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-  iconSpace: {
-    fontSize: "12px",
-  },
-  logoutSection: {
-    marginTop: "auto",
-    padding: "16px",
-    borderTop: "1px solid #ccc",
-    marginBottom: "0.8rem",
-  },
-  logoutLink: {
-    display: "flex",
-    alignItems: "center",
-    color: "white",
-    fontWeight: 600,
-    textDecoration: "none",
-    transition: "color 0.3s ease",
-  },
-  logoutIcon: {
-    marginRight: "8px",
-  },
-};

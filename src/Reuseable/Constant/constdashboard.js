@@ -34,235 +34,186 @@ export const DashBoardTable = () => {
   }, []);
 
   return (
-     <div style={DashboardStyleSheet.dashboardMainTable}>
-          {/* Summary Section */}
-          <div style={DashboardStyleSheet.summary}>
-            <p style={DashboardStyleSheet.summaryName}>Summary</p>
-            <div style={DashboardStyleSheet.show}>
-              <label htmlFor="show-selector" style={DashboardStyleSheet.showLabel}>
-                Show
-              </label>
-              <select name="show" style={DashboardStyleSheet.showSelector}>
-                <option value="10">10</option>
-                <option value="20">20</option>
-              </select>
-              <button style={DashboardStyleSheet.dispatch}>Dispatch</button>
-            </div>
-    
-            {/* Pagination */}
-            <div style={DashboardStyleSheet.pagination}>
-              <div
-                style={{
-                  ...DashboardStyleSheet.arrow,
-                  ...(currentPage === 1 ? DashboardStyleSheet.disabled : {}),
-                }}
-                onClick={() => currentPage > 1 && handlePageClick(1)}
-              >
-                First
-              </div>
-    
-              <div
-                style={{
-                  ...DashboardStyleSheet.arrow,
-                  ...(currentPage === 1 ? DashboardStyleSheet.disabled : {}),
-                }}
-                onClick={() => currentPage > 1 && handlePageClick(currentPage - 1)}
-              >
-                Previous
-              </div>
-    
-              <div
-                style={{
-                  ...DashboardStyleSheet.page,
-                  ...DashboardStyleSheet.pageActive,
-                }}
-              >
-                {currentPage}
-              </div>
-    
-              <div
-                style={{
-                  ...DashboardStyleSheet.arrow,
-                  ...(currentPage === 1 ? DashboardStyleSheet.disabled : {}),
-                }}
-                onClick={() =>
-                  currentPage < totalPages && handlePageClick(currentPage + 1)
-                }
-              >
-                Next
-              </div>
-    
-              <div
-                style={{
-                  ...DashboardStyleSheet.arrow,
-                  ...(currentPage === 1 ? DashboardStyleSheet.disabled : {}),
-                }}
-                onClick={() =>
-                  currentPage < totalPages && handlePageClick(totalPages)
-                }
-              >
-                Last
-              </div>
-            </div>
+    <div style={DashboardStyleSheet.dashboardMainTable}>
+      {/* Summary Section */}
+      <div style={DashboardStyleSheet.summary}>
+        <p style={DashboardStyleSheet.summaryName}>Summary</p>
+        <div style={DashboardStyleSheet.show}>
+          <label htmlFor="show-selector" style={DashboardStyleSheet.showLabel}>
+            Show
+          </label>
+          <select name="show" style={DashboardStyleSheet.showSelector}>
+            <option value="10">10</option>
+            <option value="20">20</option>
+          </select>
+          <button style={DashboardStyleSheet.dispatch}>Dispatch</button>
+        </div>
+
+        {/* Pagination */}
+        <div style={DashboardStyleSheet.pagination}>
+          <div
+            className="pagination-button"
+            style={{
+              ...DashboardStyleSheet.arrow,
+              ...(currentPage === 1 ? DashboardStyleSheet.disabled : {}),
+            }}
+            onClick={() => currentPage > 1 && handlePageClick(1)}
+          >
+            First
           </div>
-    
-          {/* Table Section */}
-          <div style={DashboardStyleSheet.tableContent}>
-            <table style={DashboardStyleSheet.mainTable}>
-              <thead>
-                <tr>
-                  <th style={{...DashboardStyleSheet.checkboxId, ...DashboardStyleSheet.th}}>
-                    <input type="checkbox" name="ID" id="id-checker" />
-                    <label htmlFor="id-checker">ID</label>
-                  </th>
-                  <th style={DashboardStyleSheet.th}>Name</th>
-                  <th style={DashboardStyleSheet.th}>Country</th>
-                  <th style={DashboardStyleSheet.th}>Phone</th>
-                  <th style={DashboardStyleSheet.th}>Email</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.map((row, index) => (
-                  <tr key={index} style={DashboardStyleSheet.trHover}>
-                    <td
-                      style={{
-                        ...DashboardStyleSheet.checkboxId,
-                        ...DashboardStyleSheet.td,
-                      }}
-                    >
-                      <input type="checkbox" />
-                      {row.id}
-                    </td>
-                    <td style={DashboardStyleSheet.td}>{row.name}</td>
-                    <td style={DashboardStyleSheet.td}>{row.country}</td>
-                    <td style={DashboardStyleSheet.td}>{row.phone}</td>
-                    <td style={DashboardStyleSheet.td}>{row.email}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+
+          <div
+            className="pagination-button"
+            style={{
+              ...DashboardStyleSheet.arrow,
+              ...(currentPage === 1 ? DashboardStyleSheet.disabled : {}),
+            }}
+            onClick={() => currentPage > 1 && handlePageClick(currentPage - 1)}
+          >
+            Previous
+          </div>
+
+          <div
+            className="pagination-button"
+            style={{
+              ...DashboardStyleSheet.page,
+              ...DashboardStyleSheet.pageActive,
+            }}
+          >
+            {currentPage}
+          </div>
+
+          <div
+            className="pagination-button"
+            style={{
+              ...DashboardStyleSheet.arrow,
+              ...(currentPage === 1 ? DashboardStyleSheet.disabled : {}),
+            }}
+            onClick={() =>
+              currentPage < totalPages && handlePageClick(currentPage + 1)
+            }
+          >
+            Next
+          </div>
+
+          <div
+            className="pagination-button"
+            style={{
+              ...DashboardStyleSheet.arrow,
+              ...(currentPage === 1 ? DashboardStyleSheet.disabled : {}),
+            }}
+            onClick={() =>
+              currentPage < totalPages && handlePageClick(totalPages)
+            }
+          >
+            Last
           </div>
         </div>
+      </div>
+
+      {/* Table Section */}
+      <div style={DashboardStyleSheet.tableContent}>
+        <table style={DashboardStyleSheet.mainTable}>
+          <thead>
+            <tr>
+              <th style={{ ...DashboardStyleSheet.checkboxId, ...DashboardStyleSheet.th }}>
+                <input type="checkbox" name="ID" id="id-checker" />
+                <label htmlFor="id-checker">ID</label>
+              </th>
+              <th style={DashboardStyleSheet.th}>Name</th>
+              <th style={DashboardStyleSheet.th}>Country</th>
+              <th style={DashboardStyleSheet.th}>Phone</th>
+              <th style={DashboardStyleSheet.th}>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((row, index) => (
+              <tr key={index} style={DashboardStyleSheet.trHover}>
+                <td
+                  style={{
+                    ...DashboardStyleSheet.checkboxId,
+                    ...DashboardStyleSheet.td,
+                  }}
+                >
+                  <input type="checkbox" />
+                  {row.id}
+                </td>
+                <td style={DashboardStyleSheet.td}>{row.name}</td>
+                <td style={DashboardStyleSheet.td}>{row.country}</td>
+                <td style={DashboardStyleSheet.td}>{row.phone}</td>
+                <td style={DashboardStyleSheet.td}>{row.email}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 };
 
 export const DashboardSearch = () => {
   return (
     <>
-        <div style={DashboardStyleSheet.dashboardContainer}>
-              {/* Upper Filter */}
-              <div style={DashboardStyleSheet.dashboardHeader}>
-                <div style={DashboardStyleSheet.dashboardTitle}>
-                  <h4>Order</h4>
-                </div>
-                <div style={DashboardStyleSheet.dashboardButton}>
-                  <button style={DashboardStyleSheet.createButton}>
-                    create order
-                  </button>
-                </div>
-              </div>
-      
-              {/* Middle Filter */}
-              <div style={DashboardStyleSheet.dashboardFilters}>
-                {/* <div style={"dashboard-scs-container"> */}
-                <div style={DashboardStyleSheet.dashboardSearch}>
-                  <h4>What are you looking for?</h4>
-                  <input
-                    type="search"
-                    placeholder="Search"
-                    style={DashboardStyleSheet.input}
-                  />
-                </div>
-      
-                <div style={DashboardStyleSheet.dashboardCategory}>
-                  <h4>Category</h4>
-                  <select defaultValue="" style={DashboardStyleSheet.select}>
-                    <option value="" disabled hidden>
-                      Select
-                    </option>
-                    <option>Created Date</option>
-                    <option>Remaining</option>
-                    <option>GST</option>
-                    <option>PAN</option>
-                    <option>Location</option>
-                    <option>Owner Name</option>
-                    <option>Units</option>
-                    <option>Aadhar</option>
-                    <option>Updated At</option>
-                    <option>Phone Number</option>
-                  </select>
-                </div>
-      
-                <div style={DashboardStyleSheet.dashboardStatus}>
-                  <h4>Status</h4>
-                  <select style={DashboardStyleSheet.select}>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                  </select>
-                </div>
-                {/* </div> */}
-                <div style={DashboardStyleSheet.dashboardSubmit}>
-                  <button type="submit" style={DashboardStyleSheet.searchBtn}>
-                    Search
-                  </button>
-                </div>
-              </div>
-            </div>
+      <div style={DashboardStyleSheet.dashboardContainer}>
+        {/* Upper Filter */}
+        <div style={DashboardStyleSheet.dashboardHeader}>
+          <div style={DashboardStyleSheet.dashboardTitle}>
+            <h4 style={{ margin: "10px" }}>Order</h4>
+          </div>
+          <div style={DashboardStyleSheet.dashboardButton}>
+            <button style={DashboardStyleSheet.createButton}>
+              create order
+            </button>
+          </div>
+        </div>
+
+        {/* Middle Filter */}
+        <div style={DashboardStyleSheet.dashboardFilters}>
+          {/* <div style={"dashboard-scs-container"> */}
+          <div style={DashboardStyleSheet.dashboardSearch}>
+            <h4>What are you looking for?</h4>
+            <input
+              type="search"
+              placeholder="Search"
+              style={DashboardStyleSheet.input}
+            />
+          </div>
+
+          <div style={DashboardStyleSheet.dashboardCategory}>
+            <h4>Category</h4>
+            <select defaultValue="" style={DashboardStyleSheet.select}>
+              <option value="" disabled hidden>
+                Select
+              </option>
+              <option>Created Date</option>
+              <option>Remaining</option>
+              <option>GST</option>
+              <option>PAN</option>
+              <option>Location</option>
+              <option>Owner Name</option>
+              <option>Units</option>
+              <option>Aadhar</option>
+              <option>Updated At</option>
+              <option>Phone Number</option>
+            </select>
+          </div>
+
+          <div style={DashboardStyleSheet.dashboardStatus}>
+            <h4>Status</h4>
+            <select style={DashboardStyleSheet.select}>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+            </select>
+          </div>
+          {/* </div> */}
+          <div style={DashboardStyleSheet.dashboardSubmit}>
+            <button type="submit" style={DashboardStyleSheet.searchBtn}>
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
-
-// export const DashBoardTable = () => {
-//   return (
-//     <div className="dashboard-main-table">
-//       {/* Summary Section */}
-//       <div className="summary">
-//         <p className="summary-name">Summary</p>
-
-//         <div className="show">
-//           <label htmlFor="show-selector" className="show-label">
-//             Show
-//           </label>
-//           <select name="show" id="show-selector">
-//             <option value="option1">option1</option>
-//             <option value="option2">option2</option>
-//             <option value="option3">option3</option>
-//           </select>
-
-//           <button className="dispatch">Dispatch</button>
-//         </div>
-
-//         {/* Pagination */}
-//         <div className="pagination">
-//           <div className="arrow">&lt;</div>
-//           <div className="page">1</div>
-//           <div className="page">2</div>
-//           <div className="page pagination-active">3</div>
-//           <div className="dots">...</div>
-//           <div className="page">10</div>
-//           <div className="arrow">&gt;</div>
-//         </div>
-//       </div>
-
-//       {/* Table Section */}
-//       <div className="table-content">
-//         <table className="main-table">
-//           <thead>
-//             <tr>
-//               <th>
-//                 <input type="checkbox" name="ID" id="id-checker" />
-//                 <label htmlFor="id-checker">ID</label>
-//               </th>
-//               <th>Name</th>
-//               <th>Country</th>
-//               <th>Phone</th>
-//               <th>Email</th>
-//             </tr>
-//           </thead>
-//           <tbody>{/* Table rows go here */}</tbody>
-//         </table>
-//       </div>
-//     </div>
-//   );
-// };

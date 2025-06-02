@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { DashboardStyleSheet } from "./stylesheet1";
-
+import "./conststylesheet.css";
 export const VanderTable = () => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -36,7 +36,7 @@ export const VanderTable = () => {
   return (
     <div style={DashboardStyleSheet.dashboardMainTable}>
       {/* Summary Section */}
-      <div style={DashboardStyleSheet.summary}>
+      <div style={{ ...DashboardStyleSheet.summary, }}>
         <p style={DashboardStyleSheet.summaryName}>Summary</p>
         <div style={DashboardStyleSheet.show}>
           <label htmlFor="show-selector" style={DashboardStyleSheet.showLabel}>
@@ -52,6 +52,7 @@ export const VanderTable = () => {
         {/* Pagination */}
         <div style={DashboardStyleSheet.pagination}>
           <div
+            className="pagination-button"
             style={{
               ...DashboardStyleSheet.arrow,
               ...(currentPage === 1 ? DashboardStyleSheet.disabled : {}),
@@ -62,6 +63,7 @@ export const VanderTable = () => {
           </div>
 
           <div
+            className="pagination-button"
             style={{
               ...DashboardStyleSheet.arrow,
               ...(currentPage === 1 ? DashboardStyleSheet.disabled : {}),
@@ -72,6 +74,7 @@ export const VanderTable = () => {
           </div>
 
           <div
+            className="pagination-button"
             style={{
               ...DashboardStyleSheet.page,
               ...DashboardStyleSheet.pageActive,
@@ -81,6 +84,7 @@ export const VanderTable = () => {
           </div>
 
           <div
+            className="pagination-button"
             style={{
               ...DashboardStyleSheet.arrow,
               ...(currentPage === 1 ? DashboardStyleSheet.disabled : {}),
@@ -93,6 +97,7 @@ export const VanderTable = () => {
           </div>
 
           <div
+            className="pagination-button"
             style={{
               ...DashboardStyleSheet.arrow,
               ...(currentPage === 1 ? DashboardStyleSheet.disabled : {}),
@@ -158,7 +163,7 @@ export const VanderSearch = () => {
         {/* Upper Filter */}
         <div style={DashboardStyleSheet.dashboardHeader}>
           <div style={DashboardStyleSheet.dashboardTitle}>
-            <h4>Order</h4>
+            <h4 style={{ margin: "10px" }}>Order</h4>
           </div>
           <div style={DashboardStyleSheet.dashboardButton}>
             <button style={DashboardStyleSheet.createButton}>
@@ -168,7 +173,7 @@ export const VanderSearch = () => {
         </div>
 
         {/* Middle Filter */}
-        <div style={DashboardStyleSheet.dashboardFilters}>
+        <div style={{ ...DashboardStyleSheet.dashboardFilters, }}>
           {/* <div style={"dashboard-scs-container"> */}
           <div style={DashboardStyleSheet.dashboardSearch}>
             <h4>What are you looking for?</h4>

@@ -52,6 +52,7 @@ export const RetailerTable = () => {
         {/* Pagination */}
         <div style={DashboardStyleSheet.pagination}>
           <div
+            className="pagination-button"
             style={{
               ...DashboardStyleSheet.arrow,
               ...(currentPage === 1 ? DashboardStyleSheet.disabled : {}),
@@ -62,6 +63,7 @@ export const RetailerTable = () => {
           </div>
 
           <div
+            className="pagination-button"
             style={{
               ...DashboardStyleSheet.arrow,
               ...(currentPage === 1 ? DashboardStyleSheet.disabled : {}),
@@ -72,6 +74,7 @@ export const RetailerTable = () => {
           </div>
 
           <div
+            className="pagination-button"
             style={{
               ...DashboardStyleSheet.page,
               ...DashboardStyleSheet.pageActive,
@@ -81,6 +84,7 @@ export const RetailerTable = () => {
           </div>
 
           <div
+            className="pagination-button"
             style={{
               ...DashboardStyleSheet.arrow,
               ...(currentPage === 1 ? DashboardStyleSheet.disabled : {}),
@@ -93,6 +97,7 @@ export const RetailerTable = () => {
           </div>
 
           <div
+            className="pagination-button"
             style={{
               ...DashboardStyleSheet.arrow,
               ...(currentPage === 1 ? DashboardStyleSheet.disabled : {}),
@@ -158,7 +163,7 @@ export const RetailerSearch = () => {
         {/* Upper Filter */}
         <div style={DashboardStyleSheet.dashboardHeader}>
           <div style={DashboardStyleSheet.dashboardTitle}>
-            <h4>Order</h4>
+            <h4 style={{ margin: "10px" }}>Order</h4>
           </div>
           <div style={DashboardStyleSheet.dashboardButton}>
             <button style={DashboardStyleSheet.createButton}>
